@@ -14,25 +14,37 @@ public class User {
 
     public boolean setUserName(String name)
     {
-        /* your code here */
+        String pattern="^([A-Za-z])([A-Za-z0-9]{7,})$";
+
+        if(name.matches(pattern))
+        {
+            userName=name;
+            return true;
+        }
+        else
         return false;
     }
 
-    public boolean setPassword(String name)
+    public boolean setPassword(String pass1)
     {
-        /* your code here */
-        return false;
+        String pass="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])([A-Za-z0-9]{12,})$";
+
+        if(pass1.matches(pass))
+        {
+            password=pass1;
+            return true;
+
+        } else
+            return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+        return password;
     }
 }
