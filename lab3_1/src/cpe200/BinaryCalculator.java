@@ -39,7 +39,7 @@ public class BinaryCalculator {
 
     public String multiply()
     {
-        return Supap01.multiply(Supap02).stripTrailingZeros().toString();
+        return Supap1.multiply(Supap02).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
