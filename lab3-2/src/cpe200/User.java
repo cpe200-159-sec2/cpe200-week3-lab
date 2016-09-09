@@ -24,7 +24,7 @@ public class User {
     public boolean setPassword(String name)
     {
         if (name.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([A-Z|a-z|0-9])+$")&&name.length()>=8){
-            password = name;
+            pas = name;
             return  true;
         }
         else return false;
