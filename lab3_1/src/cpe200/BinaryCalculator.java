@@ -1,5 +1,7 @@
 package cpe200;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.DoubleSummaryStatistics;
 
 /**
@@ -8,8 +10,8 @@ import java.util.DoubleSummaryStatistics;
 
 public class BinaryCalculator {
     /* your code here */
-    private Operand firstOperand;
-    private Operand secondOperand;
+    private BigDecimal firstOperand;
+    private BigDecimal secondOperand;
 
     public BinaryCalculator()
     {
@@ -19,59 +21,39 @@ public class BinaryCalculator {
     public void setFirstOperand(Operand operand)
     {
         /* your code here */
-       firstOperand = operand;
+       firstOperand = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
     {
         /* your code here */
-        secondOperand = operand;
+        secondOperand = new BigDecimal(operand.operand);
 
     }
 
     public String add()
     {
         /* your code here */
-        if(firstOperand.equals(".")||secondOperand.equals(".")){
-            return Double.toString(Double.valueOf(firstOperand.operand)+Double.valueOf(secondOperand.operand));
-        }else{
-            return Integer.toString(Integer.valueOf(firstOperand.operand)+Integer.valueOf(secondOperand.operand));
-        }
-
+        return firstOperand.add(secondOperand).stripTrailingZeros().toString();
     }
 
     public String subtract()
     {
         /* your code here */
-        if(firstOperand.equals(".")||secondOperand.equals(".")){
-            return Double.toString(Double.valueOf(firstOperand.operand)-Double.valueOf(secondOperand.operand));
-        }else{
-            return Integer.toString(Integer.valueOf(firstOperand.operand)-Integer.valueOf(secondOperand.operand));
-        }
-
+        return firstOperand.subtract(secondOperand).stripTrailingZeros().toString();
     }
 
     public String multiply()
     {
         /* your code here */
-        if(firstOperand.equals(".")||secondOperand.equals(".")){
-            //double sum = Double.toString(Double.valueOf(firstOperand.operand))
-            return Double.toString(Double.valueOf(firstOperand.operand)*Double.valueOf(secondOperand.operand));
-        }else{
-            return Integer.toString(Integer.valueOf(firstOperand.operand)*Integer.valueOf(secondOperand.operand));
-        }
-
+        return firstOperand.multiply(secondOperand).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division() {
         /* your code here */
-        if(firstOperand.equals(".")||secondOperand.equals(".")){
-            return Double.toString(Double.valueOf(firstOperand.operand)/Double.valueOf(secondOperand.operand));
-        }else{
-            return Integer.toString(Integer.valueOf(firstOperand.operand)/Integer.valueOf(secondOperand.operand));
-        }
+        return firstOperand.divide(secondOperand,5, RoundingMode.HALF_UP).stripTrailingZeros().toString();
     }
 
 
