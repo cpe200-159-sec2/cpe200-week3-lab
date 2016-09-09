@@ -1,51 +1,52 @@
 package cpe200;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * Created by pruet on 5/9/2559.
  */
 
 public class BinaryCalculator {
-    /* your code here */
+    BigDecimal oper1, oper2;
 
     public BinaryCalculator()
     {
-        /* your code here */
+
     }
 
     public void setFirstOperand(Operand operand)
     {
-        /* your code here */
+        oper1 = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
     {
-        /* your code here */
+        oper2 = new BigDecimal(operand.operand);
     }
 
     public String add()
     {
-        /* your code here */
-        return null;
+        return oper1.add(oper2).stripTrailingZeros().toString();
     }
 
     public String subtract()
     {
-        /* your code here */
-        return null;
+        return oper1.subtract(oper2).stripTrailingZeros().toString();
     }
 
     public String multiply()
     {
-        /* your code here */
-        return null;
+        return oper1.multiply(oper2).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        /* your code here */
-        return null;
+        if(oper2.compareTo(BigDecimal.ZERO) == 0){
+            throw new RuntimeException("Error!");
+        }else return oper1.divide(oper2,5, RoundingMode.HALF_UP).stripTrailingZeros().toString();
     }
 
 
