@@ -9,30 +9,35 @@ public class User {
 
     public User()
     {
-        /* your code here */
+
     }
 
     public boolean setUserName(String name)
     {
-        /* your code here */
-        return false;
+        if(name.matches("^([A-Za-z])([A-Za-z0-9]{7,})$")){
+        userName = name;
+        return true;
+        }
+    return false;
     }
 
     public boolean setPassword(String name)
     {
-        /* your code here */
+        if(name.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])([A-Za-z0-9]){12,}$")){
+            password = name;
+            return true;
+        }
         return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+
+        return password;
     }
 }
