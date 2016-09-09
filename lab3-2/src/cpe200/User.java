@@ -7,32 +7,32 @@ public class User {
     protected String userName;
     protected String password;
 
-    public User()
-    {
-        /* your code here */
+    public User() {
+
+    }
+    public boolean setUserName(String name){
+        String Ncheck = "^([A-za-z])([A-Za-z0-9]{7,})$";
+        if (name.matches(Ncheck)){
+            userName = name;
+            return true;
+        }
+        else
+            return false;
+    }
+    public boolean setPassword(String name){
+        String PCheck = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])([A-Za-z0-9]{12,})$";
+        if (name.matches(PCheck)){
+            password = name;
+            return true;
+        }
+        else
+            return false;
+    }
+    public String getUserName(){
+        return userName;
     }
 
-    public boolean setUserName(String name)
-    {
-        /* your code here */
-        return false;
-    }
-
-    public boolean setPassword(String name)
-    {
-        /* your code here */
-        return false;
-    }
-
-    public String getUserName()
-    {
-        /* your code here */
-        return null;
-    }
-
-    public String getPassword()
-    {
-        /* your code here */
-        return null;
+    public String getPassword(){
+        return password;
     }
 }
