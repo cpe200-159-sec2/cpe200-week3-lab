@@ -7,55 +7,50 @@ import java.lang.*;
  */
 
 public class BinaryCalculator {
+
     double val1;
     double val2;
 
-    public BinaryCalculator()
-    {
+    public BinaryCalculator() {
         val1 = val2 = 0.0d;
     }
 
-    public void setFirstOperand(Operand operand)
-    {
+    public void setFirstOperand(Operand operand) {
         val1 = Double.parseDouble(operand.operand);
     }
 
-
-    public void setSecondOperand(Operand operand)
-    {
+    public void setSecondOperand(Operand operand) {
         val2 = Double.parseDouble(operand.operand);
     }
 
     protected String format(double val) {
         if (Math.abs(100000 * val - 100000 * Math.round(val)) < 1) {
-            return String.format("%d", (long)val);
+            return String.format("%d", (long) val);
         } else {
             return String.format("%s", (double) Math.round(100000 * val) / 100000);
         }
     }
 
-    public String add()
-    {
+    public String add() {
         double result = val1 + val2;
         return format(result);
     }
 
-    public String subtract()
-    {
+    public String subtract() {
         double result = val1 - val2;
         return format(result);
     }
 
-    public String multiply()
-    {
+    public String multiply() {
         double result = val1 * val2;
         return format(result);
     }
 
     /* This method should throw an exception when divide by zero */
-    public String division()
-    {
-        if (100000 * Math.abs(val2) < 1) throw new RuntimeException("Cannot divide by zero");
+    public String division() {
+        if (100000 * Math.abs(val2) < 1) {
+            throw new RuntimeException("Cannot divide by zero");
+        }
         double result = val1 / val2;
         return format(result);
     }
