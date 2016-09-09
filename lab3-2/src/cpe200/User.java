@@ -16,20 +16,18 @@ public class User {
 
     public boolean setUserName(String name) {
         String check = "^[A-Za-z][A-Za-z0-9]{7,}$";
-        if(name.matches(check)) {
-            userName=name;
+        if (name.matches(check)) {
+            userName = name;
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     public boolean setPassword(String name) {
         String check = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{12,}$";
-        if(name.matches(check)){
-            password=name;
+        if (name.matches(check)) {
+            password = name;
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     public String getUserName() {
