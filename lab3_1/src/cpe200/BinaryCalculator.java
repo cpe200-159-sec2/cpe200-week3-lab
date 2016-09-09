@@ -4,48 +4,44 @@ package cpe200;
  * Created by pruet on 5/9/2559.
  */
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class BinaryCalculator {
-    /* your code here */
+    public BigDecimal firstOp;
+    public BigDecimal secondOp;
 
-    public BinaryCalculator()
-    {
-        /* your code here */
+    public BinaryCalculator() {
+        firstOp = new BigDecimal(0.0);
+        secondOp = new BigDecimal(0.0);
     }
 
-    public void setFirstOperand(Operand operand)
-    {
-        /* your code here */
+    public void setFirstOperand(Operand operand) {
+        firstOp = new BigDecimal(operand.operand);
     }
 
 
-    public void setSecondOperand(Operand operand)
-    {
-        /* your code here */
+    public void setSecondOperand(Operand operand) {
+        secondOp = new BigDecimal(operand.operand) ;
     }
 
-    public String add()
-    {
-        /* your code here */
-        return null;
+    public String add() {
+
+        return firstOp.add(secondOp).stripTrailingZeros().toString();
     }
 
-    public String subtract()
-    {
-        /* your code here */
-        return null;
+    public String subtract() {
+        return firstOp.subtract(secondOp).stripTrailingZeros().toString();
     }
 
-    public String multiply()
-    {
-        /* your code here */
-        return null;
+    public String multiply() {
+        return firstOp.multiply(secondOp).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
-    public String division()
-    {
-        /* your code here */
-        return null;
+    public String division() {
+        if(firstOp.equals(0))throw new RuntimeException("Stack underflow");
+               else return firstOp.divide(secondOp,5, BigDecimal.ROUND_HALF_UP).stripTrailingZeros().toString();
     }
 
 
