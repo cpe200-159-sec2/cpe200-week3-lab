@@ -57,7 +57,6 @@ public class UserTest {
     public void getPassword() throws Exception {
         user.setPassword("1Abcdefghijklmn");
         assertEquals("1Abcdefghijklmn", user.getPassword());
-
     }
 
 }
