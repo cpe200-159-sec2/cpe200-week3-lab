@@ -19,6 +19,8 @@ public class Operand {
     public Operand(double operand)
     {
         /* your code here */
+        this.operand = Double.toString(operand);
+
     }
 
 }
