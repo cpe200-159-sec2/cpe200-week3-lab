@@ -6,19 +6,16 @@ package cpe200;
 public class Operand {
     String operand;
 
-    public Operand(String operand)
-    {
+    public Operand(String operand) {
         this.operand = operand;
     }
 
-    public Operand(int operand)
-    {
+    public Operand(int operand) {
         this.operand = Integer.toString(operand);
     }
 
-    public Operand(double operand)
-    {
-        /* your code here */
-    }
+    public Operand(double operand) {
+        this.operand = Double.toString(operand);
+}
 
 }

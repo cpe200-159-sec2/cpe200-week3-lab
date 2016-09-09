@@ -12,6 +12,7 @@ public class BinaryCalculatorTest {
     Operand firstOperand;
     Operand secondOperand;
     BinaryCalculator binaryCalculator;
+
     @Before
     public void setUp() throws Exception {
         binaryCalculator = new BinaryCalculator();

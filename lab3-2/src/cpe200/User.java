@@ -7,31 +7,26 @@ public class User {
     protected String userName;
     protected String password;
 
-    public User()
-    {
+    public User() {
         /* your code here */
     }
 
-    public boolean setUserName(String name)
-    {
+    public boolean setUserName(String name) {
         /* your code here */
         return false;
     }
 
-    public boolean setPassword(String name)
-    {
+    public boolean setPassword(String name) {
         /* your code here */
         return false;
     }
 
-    public String getUserName()
-    {
+    public String getUserName() {
         /* your code here */
         return null;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         /* your code here */
         return null;
     }
