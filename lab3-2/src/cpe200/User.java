@@ -1,5 +1,8 @@
 package cpe200;
 
+
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.RegularExpression;
+
 /**
  * Created by pruet on 6/9/2559.
  */
@@ -9,30 +12,37 @@ public class User {
 
     public User()
     {
-        /* your code here */
+        userName = "DEFAULT";
+        password = "DEFAULT";
     }
 
     public boolean setUserName(String name)
     {
-        /* your code here */
-        return false;
+        String valid = "^[a-zA-Z][a-zA-Z0-9]{7,}$";
+        if(name.matches(valid)) {
+            userName = name;
+            return true;
+        }
+        else return false;
     }
 
     public boolean setPassword(String name)
     {
-        /* your code here */
+        String valid = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{9,}$";
+        if (name.matches(valid)){
+            password = name;
+            return true;
+        }
         return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+        return password;
     }
 }
