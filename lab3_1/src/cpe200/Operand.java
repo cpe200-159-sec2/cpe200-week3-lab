@@ -16,9 +16,10 @@ public class Operand {
         this.operand = Integer.toString(operand);
     }
 
-    public Operand(double operand)
-    {
-        /* your code here */
+    public Operand(double operand){
+
+      this.operand = Double.toString(operand);
+
+     }
     }
 
-}
