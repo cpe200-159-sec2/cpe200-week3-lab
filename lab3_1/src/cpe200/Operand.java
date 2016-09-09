@@ -1,5 +1,7 @@
 package cpe200;
 
+import java.util.DoubleSummaryStatistics;
+
 /**
  * Created by pruet on 5/9/2559.
  */
@@ -18,7 +20,7 @@ public class Operand {
 
     public Operand(double operand)
     {
-        /* your code here */
+        this.operand = Double.toString(operand);
     }
 
 }
