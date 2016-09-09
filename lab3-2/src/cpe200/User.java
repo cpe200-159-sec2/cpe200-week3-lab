@@ -7,25 +7,26 @@ import java.util.regex.Pattern;
  * Created by pruet on 6/9/2559.
  */
 public class User {
-    protected final String USERNAME_PATTERN = "[A-Za-z][A-Za-z0-9]{7,}";
-    protected final String PASSWORD_PATTERN = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{12}";
+    protected final String USERNAME_PATTERN = "^[A-Za-z][A-Za-z0-9]{7,}$";
+    protected final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{12,}$";
 
     protected String username;
     protected String password;
 
-    protected Pattern usernamePattern;
-    protected Pattern passwordPattern;
+//    protected Pattern usernamePattern;
+//    protected Pattern passwordPattern;
 
     public User()
     {
-        usernamePattern = Pattern.compile(USERNAME_PATTERN);
-        passwordPattern = Pattern.compile(PASSWORD_PATTERN);
+//        usernamePattern = Pattern.compile(USERNAME_PATTERN);
+//        passwordPattern = Pattern.compile(PASSWORD_PATTERN);
     }
 
     public boolean setUserName(String username)
     {
-        Matcher m = usernamePattern.matcher(username);
-        if (m.find()) {
+//        Matcher m = usernamePattern.matcher(username);
+//        if (m.find()) {
+        if (username.matches(USERNAME_PATTERN)) {
             this.username = username;
             return true;
         }
@@ -34,8 +35,9 @@ public class User {
 
     public boolean setPassword(String password)
     {
-        Matcher m = passwordPattern.matcher(password);
-        if (m.find()) {
+//        Matcher m = passwordPattern.matcher(password);
+//        if (m.find()) {
+        if (password.matches(PASSWORD_PATTERN)) {
             this.password = password;
             return true;
         }

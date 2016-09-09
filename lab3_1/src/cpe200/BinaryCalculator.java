@@ -27,10 +27,10 @@ public class BinaryCalculator {
     }
 
     protected String format(double val) {
-        if (Math.abs(1e5 * val - 1e5 * Math.round(val)) < 1) {
+        if (Math.abs(100000 * val - 100000 * Math.round(val)) < 1) {
             return String.format("%d", (long)val);
         } else {
-            return String.format("%s", (double) Math.round(1e5 * val) / 100000);
+            return String.format("%s", (double) Math.round(100000 * val) / 100000);
         }
     }
 
@@ -55,7 +55,7 @@ public class BinaryCalculator {
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        if (Math.abs(val2) < 1e-5) throw new RuntimeException("Cannot divide by zero");
+        if (100000 * Math.abs(val2) < 1) throw new RuntimeException("Cannot divide by zero");
         double result = val1 / val2;
         return format(result);
     }
