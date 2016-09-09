@@ -13,12 +13,13 @@ public class Operand {
 
     public Operand(int operand)
     {
+
         this.operand = Integer.toString(operand);
     }
 
     public Operand(double operand)
     {
-        /* your code here */
+        this.operand = Double.toString(operand);
     }
 
 }
