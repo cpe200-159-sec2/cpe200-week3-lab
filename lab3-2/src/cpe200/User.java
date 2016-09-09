@@ -3,13 +3,13 @@ package cpe200;
 /**
  * Created by pruet on 6/9/2559.
  */
-public class User {
+public class qUser {
     protected String userName;
     protected String password;
 
     public User()
     {
-        /* your code here */
+
     }
 
     public boolean setUserName(String name)
