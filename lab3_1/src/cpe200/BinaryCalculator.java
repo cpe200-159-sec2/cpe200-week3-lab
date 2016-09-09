@@ -5,7 +5,8 @@ package cpe200;
  */
 
 public class BinaryCalculator {
-    /* your code here */
+    Double Num1,Num2;
+    String Ans;
 
     public BinaryCalculator()
     {
@@ -14,38 +15,58 @@ public class BinaryCalculator {
 
     public void setFirstOperand(Operand operand)
     {
-        /* your code here */
+        Num1 = Double.parseDouble(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
     {
-        /* your code here */
+        Num2 = Double.parseDouble(operand.operand);
     }
 
     public String add()
     {
-        /* your code here */
-        return null;
+        Double ans = Num1 + Num2;
+        int tmp = ans.intValue();
+        if (tmp == ans)
+            return Integer.toString(tmp);
+        return Double.toString(ans);
     }
 
     public String subtract()
     {
-        /* your code here */
-        return null;
+        Double ans = Num1 - Num2;
+        int tmp = ans.intValue();
+        if (tmp == ans)
+            return Integer.toString(tmp);
+        long temp = Math.round(ans*100000);
+        ans = (double)temp;
+        ans /= 100000;
+        return Double.toString(ans);
     }
 
     public String multiply()
     {
-        /* your code here */
-        return null;
+        Double ans = Num1 * Num2;
+        int tmp = ans.intValue();
+        if (tmp == ans)
+            return Integer.toString(tmp);
+        return Double.toString(ans);
     }
 
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        /* your code here */
-        return null;
+        if (Num2 == 0)
+            throw new RuntimeException();
+        Double ans = Num1 / Num2;
+        int tmp = ans.intValue();
+        if (tmp == ans)
+            return Integer.toString(tmp);
+        long temp = Math.round(ans*100000);
+        ans = (double)temp;
+        ans /= 100000;
+        return Double.toString(ans);
     }
 
 
