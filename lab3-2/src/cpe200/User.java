@@ -24,7 +24,7 @@ public class User {
 
     public boolean setPassword(String name)
     {
-        String check = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-1])[A-Za-z0-9]{12,}";
+        String check = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{12,}";
         if(name.matches(check)){
             this.password = name;
             return true;
